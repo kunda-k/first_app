@@ -1,0 +1,20 @@
+<h1>トップページ<h1> 
+  <%# <% @post.content %>
+<%#  <% @post.created_at  %>
+
+  <%# ↑一つずつ記述する時 %>
+
+  <%#↓新規投稿フォーム遷移用ボタン%>
+  <%= link_to '新規投稿', '/posts/new' %>
+
+  <%# ↓全部一気に記述する時 %>
+<% @posts.each do |post| %>
+<div class="post">
+    <div class="post-date">
+      投稿日時：<%= post.created_at %>
+    </div>
+    <div class="post-content">
+      <%= post.content %>
+    </div>
+  </div>
+<% end %>
